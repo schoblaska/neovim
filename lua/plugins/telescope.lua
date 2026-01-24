@@ -4,7 +4,7 @@ return {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-telescope/telescope-live-grep-args.nvim",
-    "nvim-telescope/telescope-file-browser.nvim"
+    "nvim-telescope/telescope-file-browser.nvim",
   },
   keys = {
     { "<leader>t", "<cmd>Telescope find_files<cr>", desc = "Find files" },
@@ -59,7 +59,6 @@ return {
       end,
       desc = "Jumplist (project only)"
     },
-    { "<leader>f", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", desc = "File browser (current file)" },
     {
       "<leader>a",
       function()
@@ -68,11 +67,11 @@ return {
       end,
       mode = "v",
       desc = "Grep selection"
-    }
+    },
+    { "<leader>fo", "<cmd>Telescope file_browser files=false<cr>", desc = "Browse folders" },
   },
   config = function()
     local telescope = require("telescope")
-    local fb_actions = require("telescope._extensions.file_browser.actions")
 
     telescope.setup({
       defaults = {
@@ -130,31 +129,19 @@ return {
           }
         },
         file_browser = {
-          path_display = function(opts, path)
-            local action_state = require("telescope.actions.state")
-            local current_line = action_state.get_current_line()
-
-            if current_line == "" and opts.finder.files and path:match("%w+/[%w_]+") then
-              return path:gsub("^.+/", "  ")
-            else
-              return path
-            end
-          end,
-          git_status = false,
-          hidden = true,
-          initial_mode = "insert",
-          file_ignore_patterns = { ".git/" },
-          depth = 2,
-          display_stat = false,
+          depth = false,
+          path_display = {},
           mappings = {
             ["i"] = {
-              ["<Left>"] = fb_actions.goto_parent_dir
+              ["<cr>"] = function(prompt_bufnr)
+                local action_state = require("telescope.actions.state")
+                local actions = require("telescope.actions")
+                local entry = action_state.get_selected_entry()
+                actions.close(prompt_bufnr)
+                require("oil").open(entry.path)
+              end,
             },
-            ["n"] = {
-              ["a"] = fb_actions.create,
-              ["<Left>"] = fb_actions.goto_parent_dir
-            }
-          }
+          },
         }
       }
     })

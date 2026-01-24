@@ -9,6 +9,15 @@ git clone git@github.com:schoblaska/neovim.git
 ln -sf ~/path/to/neovim ~/.config/nvim
 ```
 
+## Oil
+
+File explorer that lets you edit your filesystem like a buffer.
+
+- `-` - Open parent directory (or go up in oil)
+- `<cr>` - Open file/directory
+- Standard vim motions to rename, delete, etc.
+- `:w` - Save changes (no confirmation for simple edits)
+
 ## Telescope
 
 File finding and searching with fuzzy matching.
@@ -17,8 +26,7 @@ File finding and searching with fuzzy matching.
 - `<leader>a` - Live grep (visual: grep selection)
   - `<C-o>` - Quote prompt
 - `<leader>j` - Jumplist (project only)
-- `<leader>f` - File browser at current file
-  - `<Left>` - Go to parent directory
+- `<leader>fo` - Browse folders (opens in oil)
 
 ## Diffview
 
