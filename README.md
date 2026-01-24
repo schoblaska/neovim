@@ -9,15 +9,6 @@ git clone git@github.com:schoblaska/neovim.git
 ln -sf ~/path/to/neovim ~/.config/nvim
 ```
 
-## Features
-
-- **Flash** - Jump anywhere with `s`
-- **TreeSJ** - Split/join code blocks with `gS`
-- **Gitlinker** - Copy GitHub URLs for current line
-- **Indent-blankline** - Visual indent guides
-- **Hlslens** - Enhanced search highlighting
-- **Conform** - Auto-formatting on save
-
 ## Telescope
 
 File finding and searching with fuzzy matching.
@@ -80,6 +71,52 @@ Full-screen lazygit integration.
 | Key | Action |
 |-----|--------|
 | `<leader>lg` | Open lazygit |
+
+## Flash
+
+Jump anywhere on screen.
+
+| Key | Action |
+|-----|--------|
+| `s` | Jump to any visible location |
+
+## TreeSJ
+
+Split/join code blocks (arrays, hashes, argument lists, etc.).
+
+| Key | Action |
+|-----|--------|
+| `<leader>sj` | Toggle split/join |
+
+## Gitlinker
+
+Copy GitHub URLs for current file or selection.
+
+| Key | Action |
+|-----|--------|
+| `<leader>gu` | Copy file URL |
+| `<leader>gu` (visual) | Copy URL with line range |
+
+## Hlslens
+
+Enhanced search highlighting with match count display.
+
+| Key | Action |
+|-----|--------|
+| `n` / `N` | Next/prev match |
+| `*` / `#` | Search word under cursor |
+| `<Esc>` | Clear search highlight |
+
+## Indent-blankline
+
+Visual indent guides. Automatic, no keymaps.
+
+## Conform
+
+Auto-formatting on save.
+
+- **json** - formatted via jq
+- **ruby** - formatted via LSP
 
 ## Global Keymaps
 
