@@ -128,7 +128,7 @@ Better quickfix with preview and fuzzy search.
 
 - `<leader>qf` - Open quickfix list
 - `]q` / `[q` - Next/prev quickfix item
-- In quickfix:
+- In quickfix window:
   - `<cr>` - Open and close quickfix
   - `o` - Open and keep quickfix
   - `p` - Toggle preview
