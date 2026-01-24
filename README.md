@@ -80,6 +80,15 @@ Theme with automatic light/dark mode switching based on system appearance.
 - **Dark**: duskfox
 - **Light**: dayfox
 
+## [Copilot](https://github.com/github/copilot.vim)
+
+AI-powered code completion with ghost text suggestions.
+
+- `<Tab>` (insert) - Accept suggestion
+- Ghost text appears as you type
+
+Requires GitHub Copilot subscription ($10/mo). Run `:Copilot setup` to authenticate.
+
 ## [Lazygit](https://github.com/folke/snacks.nvim)
 
 Full-screen lazygit integration.
