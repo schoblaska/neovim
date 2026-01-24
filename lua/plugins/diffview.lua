@@ -4,6 +4,18 @@ return {
   keys = {
     { "<leader>gs", "<cmd>DiffviewOpen<cr>", desc = "Git status" },
     { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+    { "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Branch history" },
+    { "<leader>gp", "<cmd>DiffviewOpen origin/main...HEAD --imply-local<cr>", desc = "PR review" },
+    {
+      "<leader>gS",
+      function()
+        local pattern = vim.fn.input("Search commits for: ")
+        if pattern ~= "" then
+          vim.cmd("DiffviewFileHistory -G" .. vim.fn.shellescape(pattern))
+        end
+      end,
+      desc = "Search commits (git log -G)",
+    },
   },
   config = function()
     local actions = require("diffview.actions")
@@ -51,8 +63,12 @@ return {
         },
         file_history_panel = {
           { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
-          { "n", "j", actions.next_entry, { desc = "Next entry" } },
-          { "n", "k", actions.prev_entry, { desc = "Prev entry" } },
+          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "j", actions.next_entry, { desc = "Next commit" } },
+          { "n", "k", actions.prev_entry, { desc = "Prev commit" } },
+          { "n", "l", actions.select_entry, { desc = "Preview diff" } },
+          { "n", "L", actions.open_commit_log, { desc = "Commit details" } },
+          { "n", "y", actions.copy_hash, { desc = "Copy commit hash" } },
           { "n", "<c-u>", actions.scroll_view(-0.25), { desc = "Scroll up" } },
           { "n", "<c-d>", actions.scroll_view(0.25), { desc = "Scroll down" } },
         },

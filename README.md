@@ -34,13 +34,23 @@ File finding and searching with fuzzy matching.
 Git diff viewer that opens in a dedicated tab.
 
 - `<leader>gs` - Git status
-- `<leader>gh` - File history
-- In file panel:
+- `<leader>gh` - File history (current file)
+- `<leader>gH` - Branch history (all commits)
+- `<leader>gp` - PR review (compare to origin/main)
+- `<leader>gS` - Search commits (git log -G)
+- File panel (git status):
   - `s` - Stage/unstage file
   - `j` / `k` - Navigate entries
   - `l` - Preview file
   - `<tab>` - Toggle file panel
   - `<cr>` - Open file and close diffview
+  - `q` - Close diffview
+- File history panel:
+  - `j` / `k` - Navigate commits
+  - `l` - Preview commit diff
+  - `L` - Show commit message (`:q` to close)
+  - `y` - Copy commit hash
+  - `<tab>` - Toggle file panel
   - `q` - Close diffview
 
 ## LSP
