@@ -8,7 +8,6 @@ return {
   },
   keys = {
     { "<leader>t", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-    { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git status" },
     { "<leader>a", "<cmd>Telescope live_grep_args<cr>", desc = "Live grep" },
     {
       "<leader>j",

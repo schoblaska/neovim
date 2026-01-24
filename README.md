@@ -19,7 +19,6 @@ File finding and searching with fuzzy matching.
 | `<leader>a` | Live grep (visual mode: grep selection) |
 | `<leader>j` | Jumplist (project only) |
 | `<leader>f` | File browser at current file |
-| `<leader>gs` | Git status |
 | `<C-o>` | Quote prompt (in live grep) |
 
 ## Diffview
@@ -28,7 +27,7 @@ Git diff viewer that opens in a dedicated tab.
 
 | Key | Action |
 |-----|--------|
-| `<leader>gd` | Open diffview |
+| `<leader>gs` | Git status |
 | `<leader>gh` | File history |
 | `s` | Stage/unstage file |
 | `j` / `k` | Navigate entries |
