@@ -98,6 +98,16 @@ Split/join code blocks (arrays, hashes, argument lists, etc.).
 
 - `<leader>sj` - Toggle split/join
 
+## [Surround](https://github.com/kylechui/nvim-surround)
+
+Add, change, delete surrounding pairs.
+
+- `ys{motion}{char}` - Add surround (e.g., `ysiw)` wraps word in parens)
+- `cs{old}{new}` - Change surround (e.g., `cs"'` changes `"` to `'`)
+- `ds{char}` - Delete surround (e.g., `ds)` removes parens)
+- `s{char}` (visual) - Surround selection
+- Aliases: `a`=angle, `p`=paren, `c`=curly, `b`=bracket, `q`=quote, `s`=any
+
 ## [Gitlinker](https://github.com/ruifm/gitlinker.nvim)
 
 Copy GitHub URLs for current file or selection.
