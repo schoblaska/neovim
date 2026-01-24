@@ -100,6 +100,14 @@ Full-screen lazygit integration.
 Jump anywhere on screen.
 
 - `s` - Jump to any visible location
+- `S` - Treesitter select (rainbow-colored node labels)
+
+## [Treesitter Textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
+
+Select code by semantic units.
+
+- `au` / `iu` - Around/inner function
+- `ab` / `ib` - Around/inner block
 
 ## [TreeSJ](https://github.com/Wansmer/treesj)
 
