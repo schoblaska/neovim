@@ -1,6 +1,6 @@
 # Neovim Config
 
-Personal neovim configuration using lazy.nvim as package manager.
+Personal neovim configuration using [lazy.nvim](https://github.com/folke/lazy.nvim) as package manager.
 
 ## Install
 
@@ -9,7 +9,7 @@ git clone git@github.com:schoblaska/neovim.git
 ln -sf ~/path/to/neovim ~/.config/nvim
 ```
 
-## Oil
+## [Oil](https://github.com/stevearc/oil.nvim)
 
 File explorer that lets you edit your filesystem like a buffer.
 
@@ -18,7 +18,7 @@ File explorer that lets you edit your filesystem like a buffer.
 - Standard vim motions to rename, delete, etc.
 - `:w` - Save changes (no confirmation for simple edits)
 
-## Telescope
+## [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 
 File finding and searching with fuzzy matching.
 
@@ -29,7 +29,7 @@ File finding and searching with fuzzy matching.
 - `<leader>j` - Jumplist (project only)
 - `<leader>fo` - Browse folders (opens in oil)
 
-## Diffview
+## [Diffview](https://github.com/sindrets/diffview.nvim)
 
 Git diff viewer that opens in a dedicated tab.
 
@@ -53,7 +53,7 @@ Git diff viewer that opens in a dedicated tab.
   - `<tab>` - Toggle file panel
   - `q` - Close diffview
 
-## LSP
+## [LSP](https://github.com/williamboman/mason.nvim)
 
 Mason-managed language servers with nvim 0.11+ native config.
 
@@ -61,7 +61,7 @@ Mason-managed language servers with nvim 0.11+ native config.
 - `K` - Hover (rounded borders)
 - Diagnostics: Custom icons in sign column
 
-## Gitsigns
+## [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 
 Git change indicators in the sign column.
 
@@ -71,39 +71,39 @@ Git change indicators in the sign column.
 - `<leader>hr` - Reset hunk
 - `<leader>hu` - Undo stage
 
-## Nightfox
+## [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 
 Theme with automatic light/dark mode switching based on system appearance.
 
 - **Dark**: duskfox
 - **Light**: dayfox
 
-## Lazygit
+## [Lazygit](https://github.com/folke/snacks.nvim)
 
 Full-screen lazygit integration.
 
 - `<leader>lg` - Open lazygit
 
-## Flash
+## [Flash](https://github.com/folke/flash.nvim)
 
 Jump anywhere on screen.
 
 - `s` - Jump to any visible location
 
-## TreeSJ
+## [TreeSJ](https://github.com/Wansmer/treesj)
 
 Split/join code blocks (arrays, hashes, argument lists, etc.).
 
 - `<leader>sj` - Toggle split/join
 
-## Gitlinker
+## [Gitlinker](https://github.com/ruifm/gitlinker.nvim)
 
 Copy GitHub URLs for current file or selection.
 
 - `<leader>gu` - Copy file URL
 - `<leader>gu` (visual) - Copy URL with line range
 
-## Hlslens
+## [Hlslens](https://github.com/kevinhwang91/nvim-hlslens)
 
 Enhanced search highlighting with match count display.
 
@@ -111,11 +111,11 @@ Enhanced search highlighting with match count display.
 - `*` / `#` - Search word under cursor
 - `<Esc>` - Clear search highlight
 
-## Indent-blankline
+## [Indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 
 Visual indent guides. Automatic, no keymaps.
 
-## Conform
+## [Conform](https://github.com/stevearc/conform.nvim)
 
 Auto-formatting on save.
 
