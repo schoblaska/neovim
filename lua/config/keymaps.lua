@@ -37,3 +37,8 @@ end, { expr = true })
 map({ "n", "v" }, "k", function()
 	return vim.v.count == 0 and "gk" or "k"
 end, { expr = true })
+
+-- Quickfix
+map("n", "]q", "<cmd>cnext<cr>zz", { desc = "Next quickfix" })
+map("n", "[q", "<cmd>cprev<cr>zz", { desc = "Prev quickfix" })
+map("n", "<leader>qf", "<cmd>copen<cr>", { desc = "Open quickfix" })

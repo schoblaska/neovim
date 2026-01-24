@@ -122,6 +122,24 @@ Auto-formatting on save.
 - **json** - formatted via jq
 - **ruby** - formatted via LSP
 
+## [Bqf](https://github.com/kevinhwang91/nvim-bqf)
+
+Better quickfix with preview and fuzzy search.
+
+- `<leader>qf` - Open quickfix list
+- `]q` / `[q` - Next/prev quickfix item
+- In quickfix:
+  - `<cr>` - Open and close quickfix
+  - `o` - Open and keep quickfix
+  - `p` - Toggle preview
+  - `zf` - Fuzzy search results
+  - `q` - Close quickfix
+
+Populate quickfix from:
+- Telescope: `<C-q>` sends results to quickfix
+- LSP: `:lua vim.diagnostic.setqflist()`
+- Grep: `:grep pattern` or `:vimgrep /pattern/ **/*`
+
 ## Global Keymaps
 
 - `<leader>y` - Yank to system clipboard
