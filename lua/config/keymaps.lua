@@ -42,3 +42,7 @@ end, { expr = true })
 map("n", "]q", "<cmd>cnext<cr>zz", { desc = "Next quickfix" })
 map("n", "[q", "<cmd>cprev<cr>zz", { desc = "Prev quickfix" })
 map("n", "<leader>qf", "<cmd>copen<cr>", { desc = "Open quickfix" })
+
+-- LSP
+map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })

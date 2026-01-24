@@ -58,6 +58,8 @@ Git diff viewer that opens in a dedicated tab.
 Mason-managed language servers with nvim 0.11+ native config.
 
 - **ruby_lsp** - Auto-installed via Mason
+- `gd` - Go to definition
+- `gr` - Go to references
 - `K` - Hover (rounded borders)
 - Diagnostics: Custom icons in sign column
 
