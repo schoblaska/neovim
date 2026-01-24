@@ -1,0 +1,64 @@
+return {
+  "sindrets/diffview.nvim",
+  cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+  keys = {
+    { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Diffview" },
+    { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+  },
+  config = function()
+    local actions = require("diffview.actions")
+    local lib = require("diffview.lib")
+
+    local function goto_file_and_close()
+      actions.goto_file_edit()
+      vim.cmd("DiffviewClose")
+    end
+
+    require("diffview").setup({
+      enhanced_diff_hl = true,
+      hooks = {
+        view_opened = function(view)
+          vim.cmd("tabmove 0")
+          -- Close diffview when leaving its tab
+          vim.api.nvim_create_autocmd("TabLeave", {
+            callback = function()
+              if lib.get_current_view() then
+                vim.schedule(function()
+                  view:close()
+                end)
+              end
+            end,
+            once = true,
+          })
+        end,
+      },
+      keymaps = {
+        view = {
+          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
+          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
+        },
+        file_panel = {
+          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
+          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
+          { "n", "s", actions.toggle_stage_entry, { desc = "Stage/unstage" } },
+          { "n", "j", actions.next_entry, { desc = "Next entry" } },
+          { "n", "k", actions.prev_entry, { desc = "Prev entry" } },
+          { "n", "l", actions.select_entry, { desc = "Preview" } },
+          { "n", "<c-u>", actions.scroll_view(-0.25), { desc = "Scroll up" } },
+          { "n", "<c-d>", actions.scroll_view(0.25), { desc = "Scroll down" } },
+        },
+        file_history_panel = {
+          { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
+          { "n", "j", actions.next_entry, { desc = "Next entry" } },
+          { "n", "k", actions.prev_entry, { desc = "Prev entry" } },
+          { "n", "<c-u>", actions.scroll_view(-0.25), { desc = "Scroll up" } },
+          { "n", "<c-d>", actions.scroll_view(0.25), { desc = "Scroll down" } },
+        },
+      },
+    })
+
+    vim.opt.fillchars:append({ diff = "╱" })
+  end,
+}
