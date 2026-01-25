@@ -151,6 +151,7 @@ Jump anywhere on screen.
 
 - `s` - Jump to any visible location
 - `S` - Treesitter select (rainbow-colored node labels)
+- `f/t/F/T` - Enhanced with labels for all matches (e.g., `ct)` shows labels for all `)` chars)
 
 ## [Treesitter Textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 
