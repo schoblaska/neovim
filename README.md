@@ -12,11 +12,11 @@ ln -sf ~/path/to/neovim ~/.config/nvim
 ## Try without overwriting your config
 
 ```bash
-git clone git@github.com:schoblaska/neovim.git ~/.config/nvim-test
-NVIM_APPNAME=nvim-test nvim
+git clone git@github.com:schoblaska/neovim.git ~/.config/schoblaska.nvim
+NVIM_APPNAME=schoblaska.nvim nvim
 ```
 
-This uses an isolated config directory (`~/.config/nvim-test`) and separate data/state/cache dirs (`~/.local/share/nvim-test`, etc.).
+This uses an isolated config directory (`~/.config/schoblaska.nvim`) and separate data/state/cache dirs (`~/.local/share/schoblaska.nvim`, etc.).
 
 ## [Oil](https://github.com/stevearc/oil.nvim)
 
