@@ -118,6 +118,16 @@ Git change indicators in the sign column. Untracked files show a dashed line.
 - `<leader>hr` - Reset hunk
 - `<leader>hu` - Undo stage
 
+## [Blame.nvim](https://github.com/FabijanZulj/blame.nvim)
+
+Git blame with same-commit highlighting and Diffview integration.
+
+- `<leader>gb` - Toggle git blame (window view)
+- `<CR>` - Open commit in Diffview
+- `i` - Commit info popup
+- `<tab>` / `<backspace>` - Navigate file history stack
+- `q` / `<esc>` - Close
+
 ## [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 
 Theme automatic switching between [Dayfox](https://user-images.githubusercontent.com/2746374/210672782-6b8690d0-3ef5-4f32-bdea-4f0a97b9d9d5.png) for light mode and [Duskfox](https://user-images.githubusercontent.com/2746374/158456284-b6ff583f-c0bb-417c-b2d5-60b8364049a7.png) for dark mode.

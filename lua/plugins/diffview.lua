@@ -19,7 +19,7 @@ return {
     {
       "<leader>gc",
       function()
-        local commit = vim.fn.input("Show commit: ")
+        local commit = vim.fn.trim(vim.fn.input("Show commit: "))
         if commit ~= "" then
           vim.cmd("DiffviewOpen " .. commit .. "^!")
           vim.schedule(function()

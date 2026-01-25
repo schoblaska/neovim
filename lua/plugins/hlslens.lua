@@ -6,7 +6,19 @@ return {
     { "N", [[<Cmd>execute("normal! " . v:count1 . "N")<CR><Cmd>lua require("hlslens").start()<CR>]], desc = "Prev match" },
     { "*", [[*<Cmd>lua require("hlslens").start()<CR>]], desc = "Search word forward" },
     { "#", [[#<Cmd>lua require("hlslens").start()<CR>]], desc = "Search word backward" },
-    { "<Esc>", "<Cmd>noh<CR>", desc = "Clear search highlight" }
+{
+      "<Esc>",
+      function()
+        vim.cmd("noh")
+        -- Close floating windows (e.g., diffview commit info)
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          if vim.api.nvim_win_get_config(win).relative ~= "" then
+            vim.api.nvim_win_close(win, false)
+          end
+        end
+      end,
+      desc = "Clear search highlight and close floats",
+    }
   },
   opts = {
     calm_down = true,
