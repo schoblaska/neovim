@@ -60,12 +60,16 @@ return {
       keymaps = {
         view = {
           { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
-          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "-", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "<tab>", actions.select_next_entry, { desc = "Next file" } },
+          { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev file" } },
           { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
         },
         file_panel = {
           { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
-          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "-", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "<tab>", actions.select_next_entry, { desc = "Next file" } },
+          { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev file" } },
           { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
           { "n", "s", actions.toggle_stage_entry, { desc = "Stage/unstage" } },
           { "n", "d", actions.restore_entry, { desc = "Discard changes" } },
@@ -77,7 +81,9 @@ return {
         },
         file_history_panel = {
           { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
-          { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "-", actions.toggle_files, { desc = "Toggle file panel" } },
+          { "n", "<tab>", actions.select_next_entry, { desc = "Next commit" } },
+          { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev commit" } },
           { "n", "j", actions.next_entry, { desc = "Next commit" } },
           { "n", "k", actions.prev_entry, { desc = "Prev commit" } },
           { "n", "o", actions.select_entry, { desc = "Preview diff" } },

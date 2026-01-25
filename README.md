@@ -41,15 +41,17 @@ Git diff viewer that opens in a dedicated tab.
   - `d` - Discard changes
   - `j` / `k` - Navigate entries
   - `o` - Preview file
-  - `<tab>` - Toggle file panel
+  - `<tab>` / `<s-tab>` - Next/prev file
+  - `-` - Toggle file panel
   - `<cr>` - Open file and close diffview
   - `q` - Close diffview
 - File history panel:
   - `j` / `k` - Navigate commits
   - `o` - Preview commit diff
+  - `<tab>` / `<s-tab>` - Next/prev commit
+  - `-` - Toggle file panel
   - `L` - Show commit message (`:q` to close)
   - `y` - Copy commit hash
-  - `<tab>` - Toggle file panel
   - `q` - Close diffview
 
 ## [Bqf](https://github.com/kevinhwang91/nvim-bqf)
