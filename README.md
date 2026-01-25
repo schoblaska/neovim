@@ -199,6 +199,7 @@ Add, change, delete surrounding pairs.
 Replace text with register contents.
 
 - `X{motion}` - Replace motion with register (e.g., `Xiw` replaces word)
+- `XX` - Replace line with register
 - `X` (visual) - Replace selection with register
 
 ## [Gitlinker](https://github.com/ruifm/gitlinker.nvim)
