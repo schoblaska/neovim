@@ -18,27 +18,15 @@ NVIM_APPNAME=schoblaska.nvim nvim
 
 This uses an isolated config directory (`~/.config/schoblaska.nvim`) and separate data/state/cache dirs (`~/.local/share/schoblaska.nvim`, etc.).
 
-## [Oil](https://github.com/stevearc/oil.nvim)
-
-File explorer that lets you edit your filesystem like a buffer.
-
-- `-` - Open parent directory (or go up in oil)
-- `<cr>` - Open file/directory
-- Standard vim motions to rename, delete, etc.
-- `:w` - Save changes (no confirmation for simple edits)
-
-## [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-
-File finding and searching with fuzzy matching.
-
-- `<leader>t` - Find files
-- `<leader>a` - Live grep (visual: grep selection)
-  - `<C-o>` - Quote prompt
-  - Supports ripgrep flags: `-g '*.lua'` (glob), `-g '!*.md'` (exclude), `-tpy` (file type), `-Tjs` (exclude type)
-- `<leader>j` - Jumplist (project only)
-- `<leader>fo` - Browse folders (opens in oil)
-
 ## [Diffview](https://github.com/sindrets/diffview.nvim)
+
+<img width="1511" height="866" alt="Screenshot 2026-01-24 at 8 24 57 PM" src="https://github.com/user-attachments/assets/16501bb7-39be-48dc-881d-43998e44a934" />
+
+*File panel*
+
+<img width="1508" height="909" alt="Screenshot 2026-01-24 at 8 22 27 PM" src="https://github.com/user-attachments/assets/8ad1d0e3-8114-4aa2-b69c-8d5aaa5bc4d3" />
+
+*File history panel*
 
 Git diff viewer that opens in a dedicated tab.
 
@@ -64,6 +52,48 @@ Git diff viewer that opens in a dedicated tab.
   - `<tab>` - Toggle file panel
   - `q` - Close diffview
 
+## [Bqf](https://github.com/kevinhwang91/nvim-bqf)
+
+<img width="1511" height="877" alt="Screenshot 2026-01-24 at 8 26 11 PM" src="https://github.com/user-attachments/assets/e906d9b0-2db0-40fb-a5af-05d3255ee27c" />
+
+Better quickfix with preview and fuzzy search.
+
+- `<leader>qf` - Open quickfix list
+- `]q` / `[q` - Next/prev quickfix item
+- In quickfix window:
+  - `<cr>` - Open and close quickfix
+  - `o` - Open and keep quickfix
+  - `p` - Toggle preview
+  - `zf` - Fuzzy search results
+  - `q` - Close quickfix
+
+Populate quickfix from:
+- Telescope: `<C-q>` sends results to quickfix
+- LSP: `:lua vim.diagnostic.setqflist()`
+- Grep: `:grep pattern` or `:vimgrep /pattern/ **/*`
+
+## [Oil](https://github.com/stevearc/oil.nvim)
+
+File explorer that lets you edit your filesystem like a buffer.
+
+- `-` - Open parent directory (or go up in oil)
+- `<cr>` - Open file/directory
+- Standard vim motions to rename, delete, etc.
+- `:w` - Save changes (no confirmation for simple edits)
+
+## [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+<img width="1508" height="874" alt="Screenshot 2026-01-24 at 8 37 14 PM" src="https://github.com/user-attachments/assets/1502767f-0a96-4a87-9d23-02434b47a7a1" />
+
+File finding and searching with fuzzy matching.
+
+- `<leader>t` - Find files
+- `<leader>a` - Live grep (visual: grep selection)
+  - `<C-o>` - Quote prompt
+  - Supports ripgrep flags: `-g '*.lua'` (glob), `-g '!*.md'` (exclude), `-tpy` (file type), `-Tjs` (exclude type)
+- `<leader>j` - Jumplist (project only)
+- `<leader>fo` - Browse folders (opens in oil)
+
 ## [LSP](https://github.com/williamboman/mason.nvim)
 
 Language servers with nvim 0.11+ native config.
@@ -76,6 +106,8 @@ Language servers with nvim 0.11+ native config.
 
 ## [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 
+<img width="1511" height="865" alt="Screenshot 2026-01-24 at 8 40 54 PM" src="https://github.com/user-attachments/assets/fd8c1215-6cec-4043-847d-8e03dd26702e" />
+
 Git change indicators in the sign column.
 
 - `]h` / `[h` - Next/prev hunk
@@ -86,10 +118,7 @@ Git change indicators in the sign column.
 
 ## [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 
-Theme with automatic light/dark mode switching based on system appearance.
-
-- **Dark**: duskfox
-- **Light**: dayfox
+Theme automatic switching between [Dayfox](https://user-images.githubusercontent.com/2746374/210672782-6b8690d0-3ef5-4f32-bdea-4f0a97b9d9d5.png) for light mode and [Duskfox](https://user-images.githubusercontent.com/2746374/158456284-b6ff583f-c0bb-417c-b2d5-60b8364049a7.png) for dark mode.
 
 ## [Copilot](https://github.com/github/copilot.vim)
 
@@ -107,6 +136,14 @@ Full-screen lazygit integration.
 - `<leader>lg` - Open lazygit
 
 ## [Flash](https://github.com/folke/flash.nvim)
+
+<img width="1510" height="872" alt="Screenshot 2026-01-24 at 8 43 11 PM" src="https://github.com/user-attachments/assets/4ad70ba1-8247-48a7-94c2-99671a9213de" />
+
+*Treesitter select*
+
+<img width="1511" height="862" alt="Screenshot 2026-01-24 at 8 43 56 PM" src="https://github.com/user-attachments/assets/83d1c48c-efb9-48c7-a2a3-9bfd139f95c9" />
+
+*Jump to any visible location*
 
 Jump anywhere on screen.
 
@@ -161,24 +198,6 @@ Auto-formatting on save.
 
 - **json** - formatted via jq
 - **ruby** - formatted via LSP
-
-## [Bqf](https://github.com/kevinhwang91/nvim-bqf)
-
-Better quickfix with preview and fuzzy search.
-
-- `<leader>qf` - Open quickfix list
-- `]q` / `[q` - Next/prev quickfix item
-- In quickfix window:
-  - `<cr>` - Open and close quickfix
-  - `o` - Open and keep quickfix
-  - `p` - Toggle preview
-  - `zf` - Fuzzy search results
-  - `q` - Close quickfix
-
-Populate quickfix from:
-- Telescope: `<C-q>` sends results to quickfix
-- LSP: `:lua vim.diagnostic.setqflist()`
-- Grep: `:grep pattern` or `:vimgrep /pattern/ **/*`
 
 ## Global Keymaps
 
