@@ -120,6 +120,8 @@ Git change indicators in the sign column. Untracked files show a dashed line.
 
 ## [Blame.nvim](https://github.com/FabijanZulj/blame.nvim)
 
+<img width="1508" height="902" alt="Screenshot 2026-01-25 at 11 30 11 AM" src="https://github.com/user-attachments/assets/6a7fd3bd-d540-4a57-b5af-202f78846094" />
+
 Git blame with Diffview integration.
 
 - `<leader>gb` - Toggle git blame (window view)
