@@ -139,13 +139,13 @@ Full-screen lazygit integration.
 
 ## [Flash](https://github.com/folke/flash.nvim)
 
-<img width="1510" height="872" alt="Screenshot 2026-01-24 at 8 43 11 PM" src="https://github.com/user-attachments/assets/4ad70ba1-8247-48a7-94c2-99671a9213de" />
-
-*Treesitter select*
-
 <img width="1511" height="862" alt="Screenshot 2026-01-24 at 8 43 56 PM" src="https://github.com/user-attachments/assets/83d1c48c-efb9-48c7-a2a3-9bfd139f95c9" />
 
 *Jump to any visible location*
+
+<img width="1510" height="872" alt="Screenshot 2026-01-24 at 8 43 11 PM" src="https://github.com/user-attachments/assets/4ad70ba1-8247-48a7-94c2-99671a9213de" />
+
+*Treesitter select*
 
 Jump anywhere on screen.
 
