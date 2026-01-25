@@ -22,6 +22,7 @@ return {
         local commit = vim.fn.input("Show commit: ")
         if commit ~= "" then
           vim.cmd("DiffviewOpen " .. commit .. "^!")
+          vim.cmd("DiffviewFocusFiles")
         end
       end,
       desc = "Show commit",
