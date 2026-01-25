@@ -192,6 +192,13 @@ Add, change, delete surrounding pairs.
 - `s{char}` (visual) - Surround selection
 - Aliases: `a`=angle, `p`=paren, `c`=curly, `b`=bracket, `q`=quote, `s`=any
 
+## [Substitute](https://github.com/gbprod/substitute.nvim)
+
+Replace text with register contents.
+
+- `X{motion}` - Replace motion with register (e.g., `Xiw` replaces word)
+- `X` (visual) - Replace selection with register
+
 ## [Gitlinker](https://github.com/ruifm/gitlinker.nvim)
 
 Copy GitHub URLs for current file or selection.
