@@ -32,7 +32,12 @@ return {
             rubyStringDelimiter = { link = "String" },
 
             -- Ruby function calls styled like variables
-            ["@function.call.ruby"] = { link = "@variable" }
+            ["@function.call.ruby"] = { link = "@variable" },
+
+            -- Gitsigns inline preview - use diff colors instead of TermCursor
+            GitSignsAddInline = { link = "DiffAdd" },
+            GitSignsChangeInline = { link = "DiffText" },
+            GitSignsDeleteInline = { link = "DiffDelete" },
           },
           duskfox = {
             IblIndent = { fg = "bg2" }
