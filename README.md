@@ -108,7 +108,7 @@ Language servers with nvim 0.11+ native config.
 
 ## [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 
-<img width="1511" height="865" alt="Screenshot 2026-01-24 at 8 40 54 PM" src="https://github.com/user-attachments/assets/fd8c1215-6cec-4043-847d-8e03dd26702e" />
+<img width="1509" height="902" alt="Screenshot 2026-01-25 at 11 25 53 AM" src="https://github.com/user-attachments/assets/67b9953e-883c-4e28-bb4e-428ad519d5cf" />
 
 Git change indicators in the sign column. Untracked files show a dashed line.
 
