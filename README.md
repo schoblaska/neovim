@@ -40,13 +40,13 @@ Git diff viewer that opens in a dedicated tab.
   - `s` - Stage/unstage file
   - `d` - Discard changes
   - `j` / `k` - Navigate entries
-  - `l` - Preview file
+  - `o` - Preview file
   - `<tab>` - Toggle file panel
   - `<cr>` - Open file and close diffview
   - `q` - Close diffview
 - File history panel:
   - `j` / `k` - Navigate commits
-  - `l` - Preview commit diff
+  - `o` - Preview commit diff
   - `L` - Show commit message (`:q` to close)
   - `y` - Copy commit hash
   - `<tab>` - Toggle file panel
@@ -108,7 +108,7 @@ Language servers with nvim 0.11+ native config.
 
 <img width="1511" height="865" alt="Screenshot 2026-01-24 at 8 40 54 PM" src="https://github.com/user-attachments/assets/fd8c1215-6cec-4043-847d-8e03dd26702e" />
 
-Git change indicators in the sign column.
+Git change indicators in the sign column. Untracked files show a dashed line.
 
 - `]h` / `[h` - Next/prev hunk
 - `<leader>hh` - Preview hunk inline
