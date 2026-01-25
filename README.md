@@ -38,6 +38,7 @@ Git diff viewer that opens in a dedicated tab.
 - `<leader>gH` - Branch history (all commits)
 - `<leader>gp` - PR review (compare to origin/main)
 - `<leader>gS` - Search commits (git log -G)
+- `<leader>gc` - Show commit (by hash)
 - File panel (git status):
   - `s` - Stage/unstage file
   - `d` - Discard changes

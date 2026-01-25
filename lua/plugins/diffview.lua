@@ -16,6 +16,16 @@ return {
       end,
       desc = "Search commits (git log -G)",
     },
+    {
+      "<leader>gc",
+      function()
+        local commit = vim.fn.input("Show commit: ")
+        if commit ~= "" then
+          vim.cmd("DiffviewOpen " .. commit .. "^!")
+        end
+      end,
+      desc = "Show commit",
+    },
   },
   config = function()
     local actions = require("diffview.actions")
