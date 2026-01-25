@@ -47,9 +47,9 @@ Git diff viewer that opens in a dedicated tab.
   - `q` - Close diffview
 - File history panel:
   - `j` / `k` - Navigate commits
-  - `o` - Preview commit diff
-  - `<tab>` / `<s-tab>` - Next/prev commit
-  - `-` - Toggle file panel
+  - `o` - Preview file diff
+  - `<tab>` / `<s-tab>` - Next/prev file
+  - `-` - Toggle history panel
   - `L` - Show commit message (`:q` to close)
   - `y` - Copy commit hash
   - `q` - Close diffview
