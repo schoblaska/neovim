@@ -40,6 +40,7 @@ Git diff viewer that opens in a dedicated tab.
 - `<leader>gS` - Search commits (git log -G)
 - File panel (git status):
   - `s` - Stage/unstage file
+  - `d` - Discard changes
   - `j` / `k` - Navigate entries
   - `l` - Preview file
   - `<tab>` - Toggle file panel
@@ -55,9 +56,9 @@ Git diff viewer that opens in a dedicated tab.
 
 ## [LSP](https://github.com/williamboman/mason.nvim)
 
-Mason-managed language servers with nvim 0.11+ native config.
+Language servers with nvim 0.11+ native config.
 
-- **ruby_lsp** - Auto-installed via Mason
+- **ruby_lsp** - Uses mise shim to respect per-project ruby versions
 - `gd` - Go to definition
 - `gr` - Go to references
 - `K` - Hover (rounded borders)
