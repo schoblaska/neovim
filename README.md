@@ -1,6 +1,6 @@
 # Neovim Config
 
-Personal neovim configuration using [lazy.nvim](https://github.com/folke/lazy.nvim) as package manager.
+Neovim dotfiles using [lazy.nvim](https://github.com/folke/lazy.nvim) as package manager.
 
 ## Install
 
@@ -8,6 +8,15 @@ Personal neovim configuration using [lazy.nvim](https://github.com/folke/lazy.nv
 git clone git@github.com:schoblaska/neovim.git
 ln -sf ~/path/to/neovim ~/.config/nvim
 ```
+
+## Try without overwriting your config
+
+```bash
+git clone git@github.com:schoblaska/neovim.git ~/.config/nvim-test
+NVIM_APPNAME=nvim-test nvim
+```
+
+This uses an isolated config directory (`~/.config/nvim-test`) and separate data/state/cache dirs (`~/.local/share/nvim-test`, etc.).
 
 ## [Oil](https://github.com/stevearc/oil.nvim)
 
