@@ -129,7 +129,7 @@ AI-powered code completion with ghost text suggestions.
 
 Requires GitHub Copilot subscription ($10/mo). Run `:Copilot setup` to authenticate.
 
-## [Lazygit](https://github.com/folke/snacks.nvim)
+## [Lazygit](https://github.com/jesseduffield/lazygit)
 
 <img width="1505" height="890" alt="Screenshot 2026-01-24 at 9 07 37 PM" src="https://github.com/user-attachments/assets/cac88818-cfa7-4c4e-9d77-543a62c27e1b" />
 
