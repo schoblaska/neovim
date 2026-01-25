@@ -55,6 +55,7 @@ return {
           { "n", "<tab>", actions.toggle_files, { desc = "Toggle file panel" } },
           { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
           { "n", "s", actions.toggle_stage_entry, { desc = "Stage/unstage" } },
+          { "n", "d", actions.restore_entry, { desc = "Discard changes" } },
           { "n", "j", actions.next_entry, { desc = "Next entry" } },
           { "n", "k", actions.prev_entry, { desc = "Prev entry" } },
           { "n", "l", actions.select_entry, { desc = "Preview" } },
