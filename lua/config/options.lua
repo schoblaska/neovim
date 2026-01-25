@@ -71,3 +71,9 @@ opt.titlestring = "%<%F%=%l/%L - nvim"
 
 -- Markdown
 vim.g.markdown_recommended_style = 0
+
+-- Project-local ShaDa (isolates jumplist, marks, etc. per project)
+local shada_dir = vim.fn.stdpath("data") .. "/shada-projects"
+local project_hash = vim.fn.sha256(vim.fn.getcwd()):sub(1, 12)
+vim.fn.mkdir(shada_dir, "p")
+vim.o.shadafile = shada_dir .. "/" .. project_hash .. ".shada"

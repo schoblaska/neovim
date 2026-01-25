@@ -91,7 +91,7 @@ File finding and searching with fuzzy matching.
 - `<leader>a` - Live grep (visual: grep selection)
   - `<C-o>` - Quote prompt
   - Supports ripgrep flags: `-g '*.lua'` (glob), `-g '!*.md'` (exclude), `-tpy` (file type), `-Tjs` (exclude type)
-- `<leader>j` - Jumplist (project only)
+- `<leader>j` - Jumplist
 - `<leader>fo` - Browse folders (opens in oil)
 
 ## [LSP](https://github.com/williamboman/mason.nvim)

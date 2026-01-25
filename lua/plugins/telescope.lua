@@ -9,56 +9,7 @@ return {
   keys = {
     { "<leader>t", "<cmd>Telescope find_files<cr>", desc = "Find files" },
     { "<leader>a", "<cmd>Telescope live_grep_args<cr>", desc = "Live grep" },
-    {
-      "<leader>j",
-      function()
-        local pickers = require("telescope.pickers")
-        local finders = require("telescope.finders")
-        local conf = require("telescope.config").values
-        local make_entry = require("telescope.make_entry")
-
-        local cwd = vim.fn.getcwd()
-        local jumplist = vim.fn.getjumplist()[1]
-        local filtered = {}
-
-        -- Filter jumplist to current project
-        for _, jump in ipairs(jumplist) do
-          if jump.bufnr > 0 then
-            local bufname = vim.api.nvim_buf_get_name(jump.bufnr)
-            if bufname ~= "" then
-              local abs_path = vim.fn.fnamemodify(bufname, ":p")
-              -- Only include if it's in cwd or doesn't start with /Users (relative path)
-              if vim.startswith(abs_path, cwd .. "/") or not vim.startswith(bufname, "/Users") then
-                local text = ""
-                if vim.api.nvim_buf_is_loaded(jump.bufnr) and jump.lnum > 0 then
-                  local lines = vim.api.nvim_buf_get_lines(jump.bufnr, jump.lnum - 1, jump.lnum, false)
-                  text = lines[1] or ""
-                end
-
-                table.insert(filtered, {
-                  bufnr = jump.bufnr,
-                  filename = bufname,
-                  lnum = jump.lnum,
-                  col = jump.col,
-                  text = text
-                })
-              end
-            end
-          end
-        end
-
-        pickers.new({}, {
-          prompt_title = "Jumplist (Project)",
-          finder = finders.new_table({
-            results = filtered,
-            entry_maker = make_entry.gen_from_quickfix()
-          }),
-          sorter = conf.generic_sorter({}),
-          previewer = conf.qflist_previewer({})
-        }):find()
-      end,
-      desc = "Jumplist (project only)"
-    },
+    { "<leader>j", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
     {
       "<leader>a",
       function()
