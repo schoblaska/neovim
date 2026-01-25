@@ -39,6 +39,14 @@ return {
       vim.cmd("DiffviewClose")
     end
 
+    local function discard_changes()
+      vim.ui.select({ "Yes", "No" }, { prompt = "Discard changes?" }, function(choice)
+        if choice == "Yes" then
+          actions.restore_entry()
+        end
+      end)
+    end
+
     require("diffview").setup({
       enhanced_diff_hl = true,
       hooks = {
@@ -56,6 +64,9 @@ return {
             once = true,
           })
         end,
+        diff_buf_win_enter = function()
+          vim.opt_local.winbar = nil
+        end,
       },
       keymaps = {
         view = {
@@ -72,7 +83,7 @@ return {
           { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev file" } },
           { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
           { "n", "s", actions.toggle_stage_entry, { desc = "Stage/unstage" } },
-          { "n", "d", actions.restore_entry, { desc = "Discard changes" } },
+          { "n", "d", discard_changes, { desc = "Discard changes" } },
           { "n", "j", actions.next_entry, { desc = "Next entry" } },
           { "n", "k", actions.prev_entry, { desc = "Prev entry" } },
           { "n", "o", actions.select_entry, { desc = "Preview" } },
