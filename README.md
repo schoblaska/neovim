@@ -56,7 +56,7 @@ Git diff viewer that opens in a dedicated tab.
 
 <img width="1511" height="877" alt="Screenshot 2026-01-24 at 8 26 11 PM" src="https://github.com/user-attachments/assets/e906d9b0-2db0-40fb-a5af-05d3255ee27c" />
 
-Better quickfix with preview and fuzzy search.
+Better [quickfix](https://neovim.io/doc/user/quickfix.html) with preview and fuzzy search.
 
 - `<leader>qf` - Open quickfix list
 - `]q` / `[q` - Next/prev quickfix item
