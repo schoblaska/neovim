@@ -120,7 +120,7 @@ Git change indicators in the sign column. Untracked files show a dashed line.
 
 ## [Blame.nvim](https://github.com/FabijanZulj/blame.nvim)
 
-Git blame with same-commit highlighting and Diffview integration.
+Git blame with Diffview integration.
 
 - `<leader>gb` - Toggle git blame (window view)
 - `<CR>` - Open commit in Diffview
