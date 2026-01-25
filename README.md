@@ -147,6 +147,10 @@ Full-screen lazygit integration.
 
 *Treesitter select*
 
+<img width="1510" height="871" alt="Screenshot 2026-01-24 at 9 30 41 PM" src="https://github.com/user-attachments/assets/8628bfda-c924-48ac-bbc0-f566a1bf2cff" />
+
+*f/t motion target labels*
+
 Jump anywhere on screen.
 
 - `s` - Jump to any visible location
