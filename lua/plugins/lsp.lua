@@ -7,12 +7,13 @@ return {
   config = function()
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = { "ruby_lsp" }
+      ensure_installed = {}
     })
 
     -- Ruby LSP (nvim 0.11+ native config)
+    -- Use mise shim directly to respect per-project ruby versions
     vim.lsp.config.ruby_lsp = {
-      cmd = { "ruby-lsp" },
+      cmd = { vim.fn.expand("~/.local/share/mise/shims/ruby-lsp") },
       filetypes = { "ruby", "eruby" },
       root_markers = { "Gemfile", ".git" },
       on_attach = function(client)
