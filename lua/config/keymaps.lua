@@ -46,3 +46,4 @@ map("n", "<leader>qf", "<cmd>copen<cr>", { desc = "Open quickfix" })
 -- LSP
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 map("n", "gr", vim.lsp.buf.references, { desc = "Go to references" })
+map("n", "E", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
