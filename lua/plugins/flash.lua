@@ -10,6 +10,7 @@ return {
       search = { enabled = false },
       char = { jump_labels = true },
       treesitter = {
+        highlight = { backdrop = true },
         label = { rainbow = { enabled = true } },
       },
     },
