@@ -100,7 +100,7 @@ File finding and searching with fuzzy matching.
 
 Language servers with nvim 0.11+ native config.
 
-- **ruby_lsp** - Uses mise shim to respect per-project ruby versions
+- **ruby_lsp** - Ruby language server
 - `gd` - Go to definition
 - `gr` - Go to references
 - `K` - Hover (rounded borders)

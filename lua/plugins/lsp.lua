@@ -11,11 +11,14 @@ return {
     })
 
     -- Ruby LSP (nvim 0.11+ native config)
-    -- Use mise shim directly to respect per-project ruby versions
     vim.lsp.config.ruby_lsp = {
-      cmd = { vim.fn.expand("~/.local/share/mise/shims/ruby-lsp") },
+      cmd = { "ruby-lsp" },
       filetypes = { "ruby", "eruby" },
       root_markers = { "Gemfile", ".git" },
+      init_options = {
+        formatter = "rubocop",
+        linters = { "rubocop" }
+      },
       on_attach = function(client)
         -- Disable semantic tokens (use treesitter highlighting instead)
         client.server_capabilities.semanticTokensProvider = nil
