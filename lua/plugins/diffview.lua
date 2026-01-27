@@ -66,6 +66,7 @@ return {
         end,
         diff_buf_win_enter = function()
           vim.opt_local.winbar = nil
+          vim.opt_local.signcolumn = "no"
         end,
       },
       keymaps = {

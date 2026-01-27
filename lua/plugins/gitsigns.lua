@@ -21,5 +21,11 @@ return {
     signcolumn = true,
     numhl = false,
     signs_staged_enable = false,
+    on_attach = function(bufnr)
+      local bufname = vim.api.nvim_buf_get_name(bufnr)
+      if bufname:match("^diffview://") then
+        return false
+      end
+    end,
   },
 }
