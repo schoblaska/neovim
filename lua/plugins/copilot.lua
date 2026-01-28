@@ -1,8 +1,9 @@
 return {
-  "github/copilot.vim",
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
   event = "InsertEnter",
-  cmd = { "Copilot" },
-  config = function()
-    vim.keymap.set("i", "<Tab>", 'copilot#Accept("<Tab>")', { expr = true, replace_keycodes = false })
-  end,
+  opts = {
+    suggestion = { enabled = false }, -- using blink-copilot instead
+    panel = { enabled = false },
+  },
 }
