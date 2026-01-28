@@ -16,6 +16,7 @@ return {
           async = true,
           opts = {
             max_completions = 3,
+            debounce = 75, -- Faster suggestions (default 200ms)
             kind_icon = "󰚩",
           },
         },
@@ -23,17 +24,17 @@ return {
     },
     keymap = {
       ["<Tab>"] = {
-        -- 1. Accept snippet placeholder
         "snippet_forward",
-        -- 2. Jump to NES hunk (sidekick)
-        function(cmp)
-          if require("sidekick").nes_jump_or_apply() then
+        function()
+          if require("sidekick").nes_jump_or_apply() then return true end
+        end,
+        function()
+          if require("copilot.suggestion").is_visible() then
+            require("copilot.suggestion").accept()
             return true
           end
         end,
-        -- 3. Accept completion if menu visible
         "select_and_accept",
-        -- 4. Fallback to normal tab
         "fallback",
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
@@ -43,6 +44,10 @@ return {
       ["<C-e>"] = { "cancel", "fallback" },
     },
     completion = {
+      trigger = {
+        show_on_insert = true,
+        show_on_blocked_trigger_characters = {},
+      },
       menu = {
         draw = {
           columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },

@@ -3,7 +3,11 @@ return {
   cmd = "Copilot",
   event = "InsertEnter",
   opts = {
-    suggestion = { enabled = false }, -- using blink-copilot instead
+    suggestion = {
+      enabled = true,
+      auto_trigger = true,
+      hide_during_completion = false, -- Show alongside blink menu
+    },
     panel = { enabled = false },
   },
 }
