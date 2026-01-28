@@ -188,6 +188,13 @@ Select code by semantic units.
 - `au` / `iu` - Around/inner function
 - `ab` / `ib` - Around/inner block
 
+## [Treesitter Endwise](https://github.com/RRethy/nvim-treesitter-endwise)
+
+Auto-insert `end` for Ruby, Lua, Elixir, Bash blocks.
+
+- Type `if condition` + `<CR>` - Inserts `end` below, cursor indented inside block
+- Works for `if`, `do`, `def`, `class`, `module`, `case`, `begin`, etc.
+
 ## [TreeSJ](https://github.com/Wansmer/treesj)
 
 Split/join code blocks (arrays, hashes, argument lists, etc.).
