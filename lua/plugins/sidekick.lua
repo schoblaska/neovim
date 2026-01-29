@@ -11,4 +11,14 @@ return {
     },
     cli = { enabled = false },
   },
+  keys = {
+    {
+      "<tab>",
+      function()
+        require("sidekick").nes_jump_or_apply()
+      end,
+      mode = { "n" },
+      desc = "NES jump/apply",
+    },
+  },
 }

@@ -17,9 +17,6 @@ map("n", "<leader>8", "8gt", { desc = "Tab 8" })
 map("n", "<leader>9", "9gt", { desc = "Tab 9" })
 map("n", "<leader>0", ":tabnew<CR>:setlocal nobuflisted<CR>", { silent = true, desc = "New tab" })
 
--- Tab to switch windows
-map("n", "<Tab>", "<C-W>w", { desc = "Next window" })
-
 -- Arrow keys move between splits
 map("n", "<Up>", "<C-W>k", { silent = true, desc = "Window up" })
 map("n", "<Down>", "<C-W>j", { silent = true, desc = "Window down" })
