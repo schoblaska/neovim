@@ -17,7 +17,13 @@ return {
       root_markers = { "Gemfile", ".git" },
       init_options = {
         formatter = "rubocop",
-        linters = { "rubocop" }
+        linters = { "rubocop" },
+        -- https://github.com/Shopify/ruby-lsp-rails/pull/570
+        addonSettings = {
+          ["Ruby LSP Rails"] = {
+            enablePendingMigrationsPrompt = false,
+          },
+        },
       },
       on_attach = function(client)
         -- Disable semantic tokens (use treesitter highlighting instead)
