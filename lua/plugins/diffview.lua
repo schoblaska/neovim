@@ -49,7 +49,14 @@ return {
 
     require("diffview").setup({
       enhanced_diff_hl = true,
+      view = {
+        default = { winbar_info = false },
+        file_history = { winbar_info = false },
+      },
       hooks = {
+        diff_buf_win_enter = function()
+          vim.wo.signcolumn = "no"
+        end,
         view_opened = function(view)
           vim.cmd("tabmove 0")
           -- Close diffview when leaving its tab
