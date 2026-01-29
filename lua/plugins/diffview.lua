@@ -37,6 +37,9 @@ return {
     local function goto_file_and_close()
       actions.goto_file_edit()
       vim.cmd("DiffviewClose")
+      -- Restore window-local settings that diffview disabled
+      vim.opt_local.number = true
+      vim.opt_local.signcolumn = "yes"
     end
 
     local function discard_changes()
@@ -67,8 +70,6 @@ return {
         diff_buf_win_enter = function()
           vim.opt_local.winbar = nil
           vim.opt_local.signcolumn = "no"
-          vim.opt_local.number = false
-          vim.opt_local.relativenumber = false
         end,
       },
       keymaps = {
