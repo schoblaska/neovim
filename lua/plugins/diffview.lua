@@ -37,6 +37,9 @@ return {
     local function goto_file_and_close()
       actions.goto_file_edit()
       vim.cmd("DiffviewClose")
+      vim.schedule(function()
+        require("gitsigns").attach()
+      end)
     end
 
     local function discard_changes()
