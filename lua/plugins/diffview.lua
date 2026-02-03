@@ -29,6 +29,16 @@ return {
       end,
       desc = "Show commit",
     },
+    {
+      "<leader>gd",
+      function()
+        local ref = vim.fn.trim(vim.fn.input("Diff HEAD against: "))
+        if ref ~= "" then
+          vim.cmd("DiffviewOpen " .. ref .. "..HEAD")
+        end
+      end,
+      desc = "Diff against ref",
+    },
   },
   config = function()
     local actions = require("diffview.actions")
