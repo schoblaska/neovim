@@ -34,6 +34,9 @@ return {
             -- Ruby function calls styled like variables
             ["@function.call.ruby"] = { link = "@variable" },
 
+            -- Make symbols and params the same color
+            ["@string.special.symbol.ruby"] = { link = "@variable.parameter" },
+
             -- Gitsigns inline preview - use diff colors instead of TermCursor
             GitSignsAddInline = { link = "DiffAdd" },
             GitSignsChangeInline = { link = "DiffText" },
