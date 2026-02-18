@@ -47,6 +47,9 @@ return {
     local function goto_file_and_close()
       actions.goto_file_edit()
       vim.cmd("DiffviewClose")
+      -- Restore window options that were disabled for diffview
+      vim.api.nvim_set_option_value("number", true, { win = 0 })
+      vim.api.nvim_set_option_value("signcolumn", "yes", { win = 0 })
     end
 
     local function discard_changes()
@@ -62,6 +65,13 @@ return {
       hooks = {
         view_opened = function(view)
           vim.cmd("tabmove 0")
+          -- Disable line numbers and sign column in diffview windows
+          vim.schedule(function()
+            for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+              vim.api.nvim_set_option_value("number", false, { win = win })
+              vim.api.nvim_set_option_value("signcolumn", "no", { win = win })
+            end
+          end)
           -- Close diffview when leaving its tab
           vim.api.nvim_create_autocmd("TabLeave", {
             callback = function()
