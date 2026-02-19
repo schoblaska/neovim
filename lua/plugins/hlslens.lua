@@ -13,7 +13,9 @@ return {
         -- Close floating windows (e.g., diffview commit info)
         for _, win in ipairs(vim.api.nvim_list_wins()) do
           if vim.api.nvim_win_get_config(win).relative ~= "" then
-            vim.api.nvim_win_close(win, false)
+            if not vim.w[win].treesitter_context then
+              vim.api.nvim_win_close(win, false)
+            end
           end
         end
       end,
