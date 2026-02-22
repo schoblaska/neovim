@@ -19,6 +19,7 @@ return {
       mode = "v",
       desc = "Grep selection"
     },
+    { "<leader>ff", "<cmd>Telescope file_browser path=%:p:h<cr>", desc = "Browse files" },
     { "<leader>fo", "<cmd>Telescope file_browser files=false<cr>", desc = "Browse folders" },
   },
   config = function()
@@ -80,19 +81,7 @@ return {
           }
         },
         file_browser = {
-          depth = false,
           path_display = {},
-          mappings = {
-            ["i"] = {
-              ["<cr>"] = function(prompt_bufnr)
-                local action_state = require("telescope.actions.state")
-                local actions = require("telescope.actions")
-                local entry = action_state.get_selected_entry()
-                actions.close(prompt_bufnr)
-                require("oil").open(entry.path)
-              end,
-            },
-          },
         }
       }
     })

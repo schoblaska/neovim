@@ -94,7 +94,8 @@ File finding and searching with fuzzy matching.
   - `<C-o>` - Quote prompt
   - Supports ripgrep flags: `-g '*.lua'` (glob), `-g '!*.md'` (exclude), `-tpy` (file type), `-Tjs` (exclude type)
 - `<leader>j` - Jumplist
-- `<leader>fo` - Browse folders (opens in oil)
+- `<leader>ff` - Browse files in current file's directory
+- `<leader>fo` - Browse folders in current directory
 
 ## [zk-nvim](https://github.com/zk-org/zk-nvim)
 
@@ -102,9 +103,9 @@ Note-taking with [zk](https://github.com/zk-org/zk) and Telescope. Notebook at `
 
 - `<leader>nn` - New note (prompts for title)
 - `<leader>nj` - Today's journal note
-- `<leader>nf` - Find notes (Telescope, sorted by modified)
-- `<leader>nf` (visual) - Find notes matching selection
-- `<leader>nt` - Browse tags
+- `<leader>nt` - Find notes by name
+- `<leader>na` - Search note contents (live grep)
+- `<leader>n#` - Browse tags
 - `<leader>nb` - Backlinks to current note
 - `<leader>nl` - Links from current note
 
