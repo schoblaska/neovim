@@ -1,5 +1,7 @@
 return {
   -- Nightfox theme (duskfox/dayfox)
+  -- Palettes: https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/palette/dayfox.lua
+  --           https://github.com/EdenEast/nightfox.nvim/blob/main/lua/nightfox/palette/duskfox.lua
   {
     "EdenEast/nightfox.nvim",
     lazy = false,
