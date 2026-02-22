@@ -7,6 +7,18 @@ return {
       load = {
         ["core.defaults"] = {},
         ["core.concealer"] = {},
+        ["core.esupports.metagen"] = {
+          config = {
+            author = "joseph",
+            type = "auto",
+            update_date = true,
+          },
+        },
+        ["core.journal"] = {
+          config = {
+            strategy = "flat",
+          },
+        },
         ["core.dirman"] = {
           config = {
             workspaces = {
@@ -15,7 +27,6 @@ return {
             default_workspace = "neorg",
           },
         },
-        ["core.journal"] = {},
       },
     })
   end,
