@@ -96,6 +96,20 @@ File finding and searching with fuzzy matching.
 - `<leader>j` - Jumplist
 - `<leader>fo` - Browse folders (opens in oil)
 
+## [zk-nvim](https://github.com/zk-org/zk-nvim)
+
+Note-taking with [zk](https://github.com/zk-org/zk) and Telescope. Notebook at `~/Dropbox/notes`.
+
+- `<leader>nn` - New note (prompts for title)
+- `<leader>nj` - Today's journal note
+- `<leader>nf` - Find notes (Telescope, sorted by modified)
+- `<leader>nf` (visual) - Find notes matching selection
+- `<leader>nt` - Browse tags
+- `<leader>nb` - Backlinks to current note
+- `<leader>nl` - Links from current note
+
+LSP auto-attaches to markdown files in the notebook.
+
 ## [LSP](https://github.com/williamboman/mason.nvim)
 
 Language servers with nvim 0.11+ native config.
