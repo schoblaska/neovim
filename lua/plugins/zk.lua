@@ -54,7 +54,7 @@ return {
     { "<leader>na", function()
       local input = vim.fn.input("Search: ")
       if input ~= "" then
-        require("zk.commands").get("ZkNotes")({ sort = { "modified" }, match = { input .. "*" } })
+        require("zk.commands").get("ZkNotes")({ sort = { "modified" }, match = { (input:gsub("%S+", "%0*")) } })
       end
     end, desc = "Search notes" },
     { "<leader>na", ":'<,'>ZkMatch<CR>", mode = "v", desc = "Search notes (selection)" },
