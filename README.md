@@ -106,10 +106,18 @@ Note-taking with [zk](https://github.com/zk-org/zk) and Telescope. Notebook at `
 - `<leader>nt` - Find notes by name
 - `<leader>na` - Search note contents (live grep)
 - `<leader>n#` - Browse tags
+- `<leader>ns` - Semantic search (natural language query, ranked by meaning via local Ollama embeddings)
 - `<leader>nb` - Backlinks to current note
 - `<leader>nl` - Links from current note
 
-LSP auto-attaches to markdown files in the notebook.
+LSP auto-attaches to markdown files in the notebook. Semantic index auto-updates on save.
+
+Semantic search requires [Ollama](https://ollama.com) with the `nomic-embed-text` model:
+
+```bash
+ollama pull nomic-embed-text
+zk-semantic index  # initial index
+```
 
 ## [LSP](https://github.com/williamboman/mason.nvim)
 

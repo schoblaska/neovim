@@ -8,6 +8,7 @@ return {
         callback = function(ev)
           if vim.fn.fnamemodify(ev.file, ":t") == "index.md" then return end
           vim.fn.jobstart({ "zk", "gen-index" }, { cwd = notebook })
+          vim.fn.jobstart({ "zk-semantic", "index" })
         end,
       })
     end
@@ -61,5 +62,59 @@ return {
     { "<leader>nj", "<Cmd>ZkNew { group = 'journal' }<CR>", desc = "Journal" },
     { "<leader>nb", "<Cmd>ZkBacklinks<CR>", desc = "Backlinks" },
     { "<leader>nl", "<Cmd>ZkLinks<CR>", desc = "Links" },
+    { "<leader>ns", function()
+      local query = vim.fn.input("Semantic search: ")
+      if query == "" then return end
+
+      local result = vim.fn.system({ "zk-semantic", "search", query })
+      if vim.v.shell_error ~= 0 then
+        vim.notify("zk-semantic error: " .. result, vim.log.levels.ERROR)
+        return
+      end
+
+      local ok, items = pcall(vim.json.decode, result)
+      if not ok or not items or #items == 0 then
+        vim.notify("No results", vim.log.levels.INFO)
+        return
+      end
+
+      local pickers = require("telescope.pickers")
+      local finders = require("telescope.finders")
+      local conf = require("telescope.config").values
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+
+      pickers.new({}, {
+        prompt_title = "Semantic: " .. query,
+        finder = finders.new_table({
+          results = items,
+          entry_maker = function(entry)
+            local title = entry.title or ""
+            local heading = entry.heading:gsub("^#+%s*", "")
+            local label = title ~= "" and heading ~= title
+              and (title .. " > " .. heading) or heading
+            return {
+              value = entry,
+              display = string.format("%.2f  %s", entry.score, label),
+              ordinal = label,
+              filename = entry.file,
+              lnum = entry.line,
+            }
+          end,
+        }),
+        sorter = conf.generic_sorter({}),
+        previewer = conf.file_previewer({}),
+        attach_mappings = function(buf, map)
+          actions.select_default:replace(function()
+            actions.close(buf)
+            local sel = action_state.get_selected_entry()
+            if sel then
+              vim.cmd("edit +" .. sel.value.line .. " " .. vim.fn.fnameescape(sel.value.file))
+            end
+          end)
+          return true
+        end,
+      }):find()
+    end, desc = "Semantic search" },
   },
 }
