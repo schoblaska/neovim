@@ -120,10 +120,6 @@ ollama pull nomic-embed-text
 zk-semantic index  # initial index
 ```
 
-## [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
-
-Rendered markdown in-buffer: tables with box-drawing characters, code blocks, checkboxes, and more. Headings use default text styling (icons and backgrounds disabled).
-
 ## [LSP](https://github.com/williamboman/mason.nvim)
 
 Language servers with nvim 0.11+ native config.
