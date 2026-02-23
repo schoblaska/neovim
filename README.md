@@ -107,6 +107,7 @@ Note-taking with [zk](https://github.com/zk-org/zk) and Telescope. Notebook at `
 - `<leader>na` - Search note contents (live grep)
 - `<leader>n#` - Browse tags
 - `<leader>ns` - Semantic search (natural language query, ranked by meaning via local Ollama embeddings)
+- `<leader>no` - Outline (jump to heading in current note)
 - `<leader>nb` - Backlinks to current note
 - `<leader>nl` - Links from current note
 
@@ -118,6 +119,10 @@ Semantic search requires [Ollama](https://ollama.com) with the `nomic-embed-text
 ollama pull nomic-embed-text
 zk-semantic index  # initial index
 ```
+
+## [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)
+
+Rendered markdown in-buffer: tables with box-drawing characters, code blocks, checkboxes, and more. Headings use default text styling (icons and backgrounds disabled).
 
 ## [LSP](https://github.com/williamboman/mason.nvim)
 
