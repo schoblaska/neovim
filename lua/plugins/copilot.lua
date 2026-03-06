@@ -4,9 +4,8 @@ return {
   event = "InsertEnter",
   opts = {
     suggestion = {
-      enabled = true,
-      auto_trigger = true,
-      hide_during_completion = false, -- Show alongside blink menu
+      enabled = false,
+      auto_trigger = false,
     },
     panel = { enabled = false },
   },
