@@ -6,7 +6,10 @@ return {
   opts = {
     ensure_installed = { "ruby", "lua", "vim", "vimdoc", "markdown", "markdown_inline" },
     auto_install = true,
-    highlight = { enable = true },
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = { "ruby" },
+    },
     indent = { enable = false },
     incremental_selection = {
       enable = true,
