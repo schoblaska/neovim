@@ -25,6 +25,9 @@ return {
     keymap = {
       ["<Tab>"] = {
         "snippet_forward",
+        function()
+          return require("sidekick").nes_jump_or_apply()
+        end,
         "show",
         "select_and_accept",
         "fallback",

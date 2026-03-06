@@ -8,7 +8,7 @@ return {
         events = {},
       },
       clear = {
-        events = { "TextChangedI", "TextChanged", "BufWritePre", "InsertEnter" },
+        events = { "TextChangedI", "InsertEnter" },
         esc = true,
       },
     },
@@ -18,12 +18,10 @@ return {
     {
       "<tab>",
       function()
-        local nes = require("sidekick.nes")
-        if nes.have() then
-          require("sidekick").nes_jump_or_apply()
-        else
-          nes.update()
+        if require("sidekick").nes_jump_or_apply() then
+          return
         end
+        require("sidekick.nes").update()
       end,
       mode = { "n" },
       desc = "NES: trigger or jump/apply",
@@ -31,9 +29,8 @@ return {
     {
       "<S-tab>",
       function()
-        local nes = require("sidekick.nes")
-        if nes.have() then
-          nes.update()
+        if require("sidekick.nes").have() then
+          require("sidekick.nes").update()
         end
       end,
       mode = { "n" },
