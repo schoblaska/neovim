@@ -30,8 +30,8 @@ return {
         "fallback",
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
-      ["j"] = { "select_next", "fallback" },
-      ["k"] = { "select_prev", "fallback" },
+      ["<Down>"] = { "select_next", "fallback" },
+      ["<Up>"] = { "select_prev", "fallback" },
       ["<C-n>"] = { "select_next", "fallback" },
       ["<C-p>"] = { "select_prev", "fallback" },
       ["<C-y>"] = { "accept", "fallback" },
@@ -61,11 +61,7 @@ return {
         },
       },
       documentation = {
-        auto_show = true,
-        auto_show_delay_ms = 200,
-      },
-      ghost_text = {
-        enabled = true,
+        auto_show = false,
       },
     },
   },
