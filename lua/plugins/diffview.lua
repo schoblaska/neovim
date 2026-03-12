@@ -90,6 +90,7 @@ return {
           { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev file" } },
           { "n", "<cr>", goto_file_and_close, { desc = "Open file" } },
           { "n", "s", actions.toggle_stage_entry, { desc = "Stage/unstage" } },
+          { "n", "S", function() require("flash").jump() end, { desc = "Flash" } },
           { "n", "d", discard_changes, { desc = "Discard changes" } },
           { "n", "j", actions.next_entry, { desc = "Next entry" } },
           { "n", "k", actions.prev_entry, { desc = "Prev entry" } },

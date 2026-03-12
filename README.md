@@ -36,8 +36,9 @@ Git diff viewer that opens in a dedicated tab.
 - `<leader>gp` - PR review (compare to origin/main)
 - `<leader>gS` - Search commits (git log -G)
 - `<leader>gc` - Show commit (by hash)
+- `<leader>gd` - Diff against ref
 - File panel (git status):
-  - `s` - Stage/unstage file
+  - `s` - Stage/unstage file (`S` for flash jump)
   - `d` - Discard changes
   - `j` / `k` - Navigate entries
   - `o` - Preview file
@@ -153,6 +154,12 @@ Git blame with Diffview integration.
 - `i` - Commit info popup
 - `<tab>` / `<backspace>` - Navigate file history stack
 - `q` / `<esc>` - Close
+
+## [Co-author](https://github.com/2kabhishek/co-author.nvim)
+
+Add git co-authors to commits via fuzzy picker.
+
+- `<leader>gC` - Add co-author
 
 ## [Nightfox](https://github.com/EdenEast/nightfox.nvim)
 
