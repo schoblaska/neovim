@@ -19,6 +19,7 @@ return {
       mode = "v",
       desc = "Grep selection"
     },
+    { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>ff", "<cmd>Telescope file_browser path=%:p:h<cr>", desc = "Browse files" },
     { "<leader>fo", "<cmd>Telescope file_browser files=false<cr>", desc = "Browse folders" },
   },

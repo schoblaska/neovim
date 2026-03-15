@@ -27,7 +27,7 @@ opt.showtabline = 1 -- show tabline only when n tabs > 1
 opt.pumheight = 10
 opt.colorcolumn = "99999"
 opt.conceallevel = 0
-opt.winbar = "%=%f" -- file path, right-aligned
+opt.winbar = "%=%{expand('%:~:.')}" -- project-relative file path, right-aligned
 
 -- Editing
 opt.expandtab = true
