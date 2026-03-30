@@ -32,6 +32,17 @@ return {
     }
     vim.lsp.enable("ruby_lsp")
 
+    -- TypeScript/React (vtsls)
+    vim.lsp.config.vtsls = {
+      cmd = { "vtsls", "--stdio" },
+      filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+      root_markers = { "package.json", "tsconfig.json", ".git" },
+      on_attach = function(client)
+        client.server_capabilities.semanticTokensProvider = nil
+      end
+    }
+    vim.lsp.enable("vtsls")
+
     -- Diagnostic signs (nvim 0.11+ API)
     vim.diagnostic.config({
       signs = {

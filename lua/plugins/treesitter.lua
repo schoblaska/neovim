@@ -4,7 +4,7 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
   main = "nvim-treesitter.configs",
   opts = {
-    ensure_installed = { "ruby", "lua", "vim", "vimdoc", "markdown", "markdown_inline" },
+    ensure_installed = { "ruby", "lua", "vim", "vimdoc", "markdown", "markdown_inline", "typescript", "tsx", "javascript", "css", "html" },
     auto_install = true,
     highlight = {
       enable = true,
