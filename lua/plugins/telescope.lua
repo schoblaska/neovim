@@ -22,7 +22,28 @@ return {
     { "<leader>b", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
     { "<leader>r", "<cmd>Telescope resume<cr>", desc = "Resume last search" },
     { "<leader>ff", "<cmd>Telescope file_browser path=%:p:h<cr>", desc = "Browse files" },
-    { "<leader>fo", "<cmd>Telescope file_browser files=false<cr>", desc = "Browse folders" },
+    {
+      "<leader>fo",
+      function()
+        require("telescope.builtin").find_files({
+          find_command = { "fd", "--type", "d", "--hidden", "--exclude", ".git" },
+          prompt_title = "Find Folder",
+          attach_mappings = function(prompt_bufnr, map)
+            local actions = require("telescope.actions")
+            local action_state = require("telescope.actions.state")
+            actions.select_default:replace(function()
+              local entry = action_state.get_selected_entry()
+              actions.close(prompt_bufnr)
+              if entry then
+                require("oil").open(entry[1])
+              end
+            end)
+            return true
+          end,
+        })
+      end,
+      desc = "Find folder",
+    },
   },
   config = function()
     local telescope = require("telescope")
