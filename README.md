@@ -165,17 +165,15 @@ Add git co-authors to commits via fuzzy picker.
 
 Theme automatic switching between [Dayfox](https://user-images.githubusercontent.com/2746374/210672782-6b8690d0-3ef5-4f32-bdea-4f0a97b9d9d5.png) for light mode and [Duskfox](https://user-images.githubusercontent.com/2746374/158456284-b6ff583f-c0bb-417c-b2d5-60b8364049a7.png) for dark mode.
 
-## [Blink.cmp](https://github.com/saghen/blink.cmp) + [Copilot](https://github.com/fang2hou/blink-copilot)
+## [Blink.cmp](https://github.com/saghen/blink.cmp)
 
-Fast completion framework with LSP, Copilot, and buffer sources.
+Fast completion framework with LSP, path, and buffer sources.
 
 - `<Tab>` - Smart accept: snippet → NES → completion → fallback
 - `<S-Tab>` - Previous snippet placeholder
 - `<C-n>` / `<C-p>` - Navigate completion menu
 - `<C-y>` - Accept completion
 - `<C-e>` - Cancel completion
-
-Requires GitHub Copilot subscription. Run `:Copilot auth` to authenticate.
 
 ## [Sidekick](https://github.com/folke/sidekick.nvim)
 

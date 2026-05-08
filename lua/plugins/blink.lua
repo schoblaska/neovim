@@ -1,26 +1,11 @@
 return {
   "saghen/blink.cmp",
   version = "*",
-  dependencies = {
-    "fang2hou/blink-copilot",
-  },
+  dependencies = {},
   event = "InsertEnter",
   opts = {
     sources = {
-      default = { "lsp", "copilot", "path", "buffer" },
-      providers = {
-        copilot = {
-          name = "copilot",
-          module = "blink-copilot",
-          score_offset = 100,
-          async = true,
-          opts = {
-            max_completions = 3,
-            debounce = 75,
-            kind_icon = "󰚩",
-          },
-        },
-      },
+      default = { "lsp", "path", "buffer" },
     },
     keymap = {
       ["<Tab>"] = {
