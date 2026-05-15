@@ -59,6 +59,16 @@ return {
         dynamic_preview_title = true,
         results_title = false,
         path_display = { "filename_first" },
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden"
+        },
         layout_config = {
           horizontal = {
             prompt_position = "top",
