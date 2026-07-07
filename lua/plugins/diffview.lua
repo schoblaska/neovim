@@ -49,6 +49,21 @@ return {
       vim.cmd("DiffviewClose")
     end
 
+    local function open_commit_from_history()
+      local view = lib.get_current_view()
+      if not view then return end
+      local item = view.panel:get_item_at_cursor()
+      if not (item and item.commit) then return end
+      local hash = item.commit.hash
+      vim.cmd("DiffviewClose")
+      vim.schedule(function()
+        vim.cmd("DiffviewOpen " .. hash .. "^!")
+        vim.schedule(function()
+          vim.cmd("DiffviewFocusFiles")
+        end)
+      end)
+    end
+
     local function discard_changes()
       vim.ui.select({ "Yes", "No" }, { prompt = "Discard changes?" }, function(choice)
         if choice == "Yes" then
@@ -100,6 +115,7 @@ return {
         },
         file_history_panel = {
           { "n", "q", "<cmd>DiffviewClose<cr>", { desc = "Close" } },
+          { "n", "<cr>", open_commit_from_history, { desc = "Open commit in diffview" } },
           { "n", "-", actions.toggle_files, { desc = "Toggle file panel" } },
           { "n", "<tab>", actions.select_next_entry, { desc = "Next commit" } },
           { "n", "<s-tab>", actions.select_prev_entry, { desc = "Prev commit" } },
