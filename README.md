@@ -284,3 +284,4 @@ Auto-formatting on save.
 - `<Tab>` - Next window
 - Arrow keys - Move between splits
 - `af` - Select entire file (visual/operator)
+- `<C-p>` - Jump forward in jumplist (`<C-i>` conflicts with Tab)

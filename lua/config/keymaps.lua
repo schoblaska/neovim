@@ -35,6 +35,9 @@ map({ "n", "v" }, "k", function()
 	return vim.v.count == 0 and "gk" or "k"
 end, { expr = true })
 
+-- Jumplist: C-p to jump forward because C-i conflicts with Tab
+map("n", "<C-p>", "<C-i>", { desc = "Jump forward" })
+
 -- Quickfix
 map("n", "]q", "<cmd>cnext<cr>zz", { desc = "Next quickfix" })
 map("n", "[q", "<cmd>cprev<cr>zz", { desc = "Prev quickfix" })
