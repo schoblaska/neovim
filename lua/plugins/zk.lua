@@ -60,7 +60,7 @@ return {
     { "<leader>na", ":'<,'>ZkMatch<CR>", mode = "v", desc = "Search notes (selection)" },
     { "<leader>n#", "<Cmd>ZkTags<CR>", desc = "Tags" },
     { "<leader>nj", "<Cmd>ZkNew { group = 'journal' }<CR>", desc = "Journal" },
-    { "<leader>no", function() require("util.outline").headings() end, desc = "Outline", ft = "markdown" },
+    { "<leader>no", function() require("util.outline").open() end, desc = "Outline", ft = "markdown" },
     { "<leader>nb", "<Cmd>ZkBacklinks<CR>", desc = "Backlinks" },
     { "<leader>nl", "<Cmd>ZkLinks<CR>", desc = "Links" },
     { "<leader>ns", function()

@@ -95,9 +95,14 @@ File finding and searching with fuzzy matching.
   - `<C-o>` - Quote prompt
   - Supports ripgrep flags: `-g '*.lua'` (glob), `-g '!*.md'` (exclude), `-tpy` (file type), `-Tjs` (exclude type)
 - `<leader>j` - Jumplist
-- `<leader>e` - Outline (LSP symbols; markdown headings in markdown, treesitter without an LSP)
 - `<leader>ff` - Browse files in current file's directory
 - `<leader>fo` - Browse folders in current directory
+
+## [Snacks](https://github.com/folke/snacks.nvim)
+
+Symbol outline in a tree, with a preview pane. LSP symbols where a server is attached, treesitter otherwise, and markdown headings in markdown.
+
+- `<leader>e` - Outline
 
 ## [zk-nvim](https://github.com/zk-org/zk-nvim)
 

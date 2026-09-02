@@ -1,68 +1,79 @@
 local M = {}
 
--- Markdown headings as a telescope picker
-function M.headings()
-  local headings = {}
-  for i, line in ipairs(vim.api.nvim_buf_get_lines(0, 0, -1, false)) do
-    if line:match("^#+%s") then
-      table.insert(headings, { lnum = i, text = line })
+-- Markdown has no treesitter `locals` query, so headings need their own finder.
+-- Items are shaped for the `lsp_symbol` format, nested by heading level.
+local function headings(buf)
+  local items = {}
+  local stack = { [0] = { text = "", root = true } }
+  local fenced = false
+
+  for lnum, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, -1, false)) do
+    if line:match("^%s*```") then
+      fenced = not fenced
+    end
+
+    local hashes, name = line:match("^(#+)%s+(.*)$")
+
+    if hashes and not fenced and #hashes <= 6 then
+      name = name:gsub("%[([^%]]*)%]%b()", "%1"):gsub("%s*#+%s*$", "")
+      local level = #hashes
+      local parent
+
+      -- A heading that skips a level (## then ####) hangs off its nearest ancestor
+      for i = level - 1, 0, -1 do
+        if stack[i] then
+          parent = stack[i]
+          break
+        end
+      end
+
+      local item = {
+        kind = "String",
+        name = name,
+        text = name,
+        parent = parent,
+        tree = true,
+        buf = buf,
+        file = vim.api.nvim_buf_get_name(buf),
+        pos = { lnum, 0 },
+      }
+
+      for i = level, 6 do stack[i] = nil end
+      stack[level] = item
+      items[#items + 1] = item
     end
   end
-  if #headings == 0 then
-    vim.notify("No headings", vim.log.levels.INFO)
-    return
+
+  -- The tree draws └─ off `last`, so only the final child of each parent keeps it
+  local last = {}
+  for _, item in ipairs(items) do
+    if last[item.parent] then last[item.parent].last = nil end
+    last[item.parent] = item
+    item.last = true
   end
 
-  local pickers = require("telescope.pickers")
-  local finders = require("telescope.finders")
-  local conf = require("telescope.config").values
-
-  pickers.new({}, {
-    prompt_title = "Headings",
-    finder = finders.new_table({
-      results = headings,
-      entry_maker = function(entry)
-        local indent = entry.text:match("^(#+)"):len() - 1
-        local label = string.rep("  ", indent) .. entry.text:gsub("^#+%s*", "")
-        return {
-          value = entry,
-          display = label,
-          ordinal = label,
-          lnum = entry.lnum,
-        }
-      end,
-    }),
-    sorter = conf.generic_sorter({}),
-    attach_mappings = function(buf)
-      local actions = require("telescope.actions")
-      local action_state = require("telescope.actions.state")
-      actions.select_default:replace(function()
-        actions.close(buf)
-        local sel = action_state.get_selected_entry()
-        if sel then vim.api.nvim_win_set_cursor(0, { sel.lnum, 0 }) end
-      end)
-      return true
-    end,
-  }):find()
+  return items
 end
 
--- Functions, classes, etc. via LSP, falling back to treesitter
-function M.symbols()
-  local builtin = require("telescope.builtin")
+-- Functions, classes, headings — LSP where a server is attached, treesitter otherwise
+function M.open()
   for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
     if client:supports_method("textDocument/documentSymbol") then
-      return builtin.lsp_document_symbols({ symbol_width = 60 })
+      return Snacks.picker.lsp_symbols()
     end
   end
-  builtin.treesitter()
-end
 
-function M.open()
   if vim.bo.filetype == "markdown" then
-    M.headings()
-  else
-    M.symbols()
+    return Snacks.picker({
+      source = "headings",
+      title = "Headings",
+      items = headings(vim.api.nvim_get_current_buf()),
+      format = "lsp_symbol",
+      tree = true,
+    })
   end
+
+  Snacks.picker.treesitter()
 end
 
 return M
