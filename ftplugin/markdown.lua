@@ -10,3 +10,16 @@ vim.keymap.set("i", "<CR>", function()
   end
   return "<CR>"
 end, { buffer = true, expr = true })
+
+-- Follow `path/to/file.rb:42` refs into a split beside the prose
+local coderef = require("config.coderef")
+
+vim.keymap.set("n", "<CR>", function()
+  if not coderef.follow() then
+    vim.cmd("silent! normal! +")
+  end
+end, { buffer = true, desc = "Follow code ref" })
+
+vim.keymap.set("n", "<leader><CR>", function()
+  coderef.follow({ stay = true })
+end, { buffer = true, desc = "Follow code ref, stay here" })
