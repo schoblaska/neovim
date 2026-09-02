@@ -103,6 +103,7 @@ File finding and searching with fuzzy matching.
 Symbol outline in a tree, with a preview pane. LSP symbols where a server is attached, treesitter otherwise, and markdown headings in markdown.
 
 - `<leader>e` - Outline
+  - `<C-u>` / `<C-d>` - Scroll the preview
 
 ## [zk-nvim](https://github.com/zk-org/zk-nvim)
 
