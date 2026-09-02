@@ -9,11 +9,10 @@ return {
       -- half width, stacking the preview underneath on a narrow screen
       layouts = {
         wide = {
+          fullscreen = true,
           layout = {
             box = "horizontal",
             backdrop = false,
-            width = 0,
-            height = 0,
             border = "none",
             {
               box = "vertical",
@@ -27,11 +26,10 @@ return {
           },
         },
         tall = {
+          fullscreen = true,
           layout = {
             box = "vertical",
             backdrop = false,
-            width = 0,
-            height = 0,
             border = "none",
             {
               box = "vertical",
