@@ -10,6 +10,7 @@ return {
     { "<leader>t", "<cmd>Telescope find_files<cr>", desc = "Find files" },
     { "<leader>a", "<cmd>Telescope live_grep_args<cr>", desc = "Live grep" },
     { "<leader>j", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
+    { "<leader>e", function() require("util.outline").open() end, desc = "Outline" },
     {
       "<leader>a",
       function()
