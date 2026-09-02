@@ -102,7 +102,7 @@ File finding and searching with fuzzy matching.
 
 Symbol outline in a tree, with a preview pane. LSP symbols where a server is attached, treesitter otherwise, and markdown headings in markdown.
 
-The picker fills the screen. The preview sits beside the list, or underneath it below 160 columns.
+The picker fills the screen. The preview sits beside the list, or above it below 160 columns.
 
 - `<leader>e` - Outline
   - `<C-u>` / `<C-d>` - Scroll the preview

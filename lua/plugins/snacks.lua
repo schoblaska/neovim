@@ -31,6 +31,7 @@ return {
             box = "vertical",
             backdrop = false,
             border = "none",
+            { win = "preview", title = "{preview}", title_pos = "center", border = true, height = 0.6 },
             {
               box = "vertical",
               border = true,
@@ -39,7 +40,6 @@ return {
               { win = "input", height = 1, border = "bottom" },
               { win = "list", border = "none" },
             },
-            { win = "preview", title = "{preview}", title_pos = "center", border = true, height = 0.6 },
           },
         },
       },
