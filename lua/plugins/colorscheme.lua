@@ -39,6 +39,10 @@ return {
             -- Make symbols and params the same color
             ["@string.special.symbol.ruby"] = { link = "@variable.parameter" },
 
+            -- Snacks picker - editor background, like telescope
+            SnacksPicker = { link = "Normal" },
+            SnacksPickerBox = { link = "Normal" },
+
             -- Gitsigns inline preview - use diff colors instead of TermCursor
             GitSignsAddInline = { link = "DiffAdd" },
             GitSignsChangeInline = { link = "DiffText" },
