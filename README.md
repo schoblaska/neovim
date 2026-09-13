@@ -100,7 +100,7 @@ File finding and searching with fuzzy matching.
 
 ## [Snacks](https://github.com/folke/snacks.nvim)
 
-Symbol outline in a tree, with a preview pane. LSP symbols where a server is attached, treesitter otherwise, and markdown headings in markdown.
+Symbol outline in a tree, with a preview pane, opening on the symbol under the cursor. LSP symbols where a server is attached, treesitter otherwise, and markdown headings in markdown.
 
 The picker fills the screen. The preview sits beside the list, or above it below 160 columns.
 

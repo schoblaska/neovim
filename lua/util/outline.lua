@@ -55,11 +55,30 @@ local function headings(buf)
   return items
 end
 
+-- Start the list on the innermost symbol enclosing the cursor. Items arrive in
+-- document order, so the last one spanning the line is the deepest. Only the
+-- LSP knows where a symbol ends (`range`; `end_pos` is just the name), so
+-- treesitter and headings fall back to the nearest symbol above the cursor,
+-- as does the LSP when the cursor sits between symbols.
+local function focus_cursor(picker)
+  local lnum = vim.api.nvim_win_get_cursor(picker.main)[1]
+  local inside, above
+
+  for item, idx in picker:iter() do
+    if item.pos[1] <= lnum then
+      above = idx
+      if item.range and lnum <= item.range["end"].line + 1 then inside = idx end
+    end
+  end
+
+  if inside or above then picker.list:view(inside or above) end
+end
+
 -- Functions, classes, headings — LSP where a server is attached, treesitter otherwise
 function M.open()
   for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
     if client:supports_method("textDocument/documentSymbol") then
-      return Snacks.picker.lsp_symbols()
+      return Snacks.picker.lsp_symbols({ on_show = focus_cursor })
     end
   end
 
@@ -70,10 +89,11 @@ function M.open()
       items = headings(vim.api.nvim_get_current_buf()),
       format = "lsp_symbol",
       tree = true,
+      on_show = focus_cursor,
     })
   end
 
-  Snacks.picker.treesitter()
+  Snacks.picker.treesitter({ on_show = focus_cursor })
 end
 
 return M
