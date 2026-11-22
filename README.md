@@ -140,6 +140,17 @@ Language servers with nvim 0.11+ native config.
 - `K` - Hover (rounded borders)
 - Diagnostics: Custom icons in sign column
 
+## [Lean](https://github.com/Julian/lean.nvim)
+
+Lean 4 LSP with a live infoview (goal state at the cursor).
+
+- `\to`, `\and`, `\<` … - Unicode abbreviations (insert mode)
+- `<leader>i` - Toggle infoview
+- `<leader><Tab>` - Jump to/from infoview
+- `<leader>s` - Accept "Try this" suggestion
+- `<leader>lr` - Restart Lean for this file
+- `<leader>x` / `<leader>c` - Pin goal at cursor / clear pins
+
 ## [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 
 <img width="1509" height="902" alt="Screenshot 2026-01-25 at 11 25 53 AM" src="https://github.com/user-attachments/assets/67b9953e-883c-4e28-bb4e-428ad519d5cf" />
